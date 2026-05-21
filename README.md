@@ -19,13 +19,13 @@
 
 - [About the Project](#-about-the-project)
 - [Screenshots](#-screenshots)
-- [Features](#-features)
-- [Database Structure](#-database-structure)
-- [Tech Stack](#-tech-stack)
-- [Getting Started](#-getting-started)
-- [How to Use](#-how-to-use)
-- [Project Structure](#-project-structure)
-- [Author](#-author)
+- [Features](#-Features)
+- [Database Structure](#-Database-Structure)
+- [Tech Stack](#-Tech-Stack)
+- [Getting Started](#-Getting-Started)
+- [How to Use](#-How-to-Use)
+- [Project Structure](#-Project-Structure)
+- [Author](#-Author)
 
 ---
 
