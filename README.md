@@ -17,8 +17,8 @@
 
 ## 📋 Table of Contents
 
-- [About the Project](#-about-the-project)
-- [Screenshots](#-screenshots)
+- [About the Project](#-About-the-Project)
+- [Screenshots](#-Screenshots)
 - [Features](#-Features)
 - [Database Structure](#-Database-Structure)
 - [Tech Stack](#-Tech-Stack)
