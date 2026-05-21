@@ -3,14 +3,14 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Language-C%2B%2B-blue?style=for-the-badge&logo=cplusplus"/>
   <img src="https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows"/>
-  <img src="https://img.shields.io/badge/Database-SQLite-003B57?style=for-the-badge&logo=sqlite"/>
+  <img src="https://img.shields.io/badge/Database-SQLite3-003B57?style=for-the-badge&logo=sqlite"/>
   <img src="https://img.shields.io/badge/IDE-Visual%20Studio-5C2D91?style=for-the-badge&logo=visualstudio"/>
-  <img src="https://img.shields.io/badge/UI-Win32%20API-gray?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/API-Win32-gray?style=for-the-badge&logo=windows"/>
 </p>
 
 <p align="center">
   A fully functional <strong>Windows Desktop Application</strong> for managing airline flights, passengers, and reservations.<br/>
-  Built with <strong>C++ Win32 API</strong> and <strong>SQLite</strong> as the embedded local database.
+  Built with <strong>C++ Win32 API</strong> and <strong>SQLite3</strong> as the embedded local database — no server required.
 </p>
 
 ---
@@ -31,100 +31,92 @@
 
 ## 📌 About the Project
 
-This project is a **Windows Programming** desktop application developed using **C++** and the **Win32 API** through Visual Studio. It simulates a real airline reservation system where administrators can manage flights, register passengers, and handle bookings — all stored locally in a **SQLite** database with no need for an internet connection or external database server.
+This project is a **Windows Desktop Application** developed using **C++** with the native **Win32 API** in Visual Studio. It simulates a real-world airline reservation system where an administrator can manage flights, register passengers, handle individual and group bookings, and search records — all stored persistently in a local **SQLite3** database file (`airline.db`).
 
-The project was built as part of the **Windows Programming** course, demonstrating:
-- Native Windows GUI development using Win32 API
-- Embedded database integration with SQLite
-- Full CRUD operations (Create, Read, Update, Delete)
-- Multiple search strategies on database records
+Built as part of the **Windows Programming** course at **Delta Technological University**, the project demonstrates:
+
+- Native Windows GUI development using Win32 API (Tab Controls, ListBoxes, ComboBoxes, Buttons, Edit Controls)
+- Embedded SQLite3 database integration (no external server)
+- Full **CRUD** operations — Create, Read, Update, Delete — on all entities
+- Two independent search strategies on booking records
+- **Group booking** support for up to 9 passengers on a single flight
+- Custom-drawn dark-themed UI with color-coded action buttons
 
 ---
 
 ## 📸 Screenshots
 
-### 🏠 Main Window
-<!-- 📂 Save your screenshot as: screenshots/main_window.png -->
-![Main Window](screenshots/main_window.png)
-
-> The main dashboard where you can navigate between Flights, Passengers, and Reservations.
+### 🏠 Passengers Tab
+![Passengers Tab](Screenshots/main_window.png)
+> Add, update, and delete passengers. Click any row to auto-fill the form fields for editing.
 
 ---
 
-### ✈️ Flights Management
-<!-- 📂 Save your screenshot as: screenshots/flights.png -->
-![Flights Management](screenshots/flights.png)
-
-> Add, edit, delete, and view all available flights. Includes seat availability tracking.
+### ✈️ Flights Tab
+![Flights Tab](Screenshots/flights.png)
+> Manage all flights with number, origin, destination, departure/arrival times, price, and status (Scheduled / Delayed / Cancelled / Boarded / Completed).
 
 ---
 
-### 🔍 Search Flights
-<!-- 📂 Save your screenshot as: screenshots/search_flights.png -->
-![Search Flights](screenshots/search_flights.png)
-
-> **Search Method 1:** Search by Flight Number — find an exact or partial flight code (e.g. `MS-4`).  
-> **Search Method 2:** Search by Destination — find all flights going to a specific city.
+### 🎫 Bookings Tab
+![Bookings Tab](Screenshots/reservations.png)
+> Book a single passenger or an entire group (up to 9) on a selected flight. Cancel any existing booking from the list.
 
 ---
 
-### 🎫 Reservations
-<!-- 📂 Save your screenshot as: screenshots/reservations.png -->
-![Reservations](screenshots/reservations.png)
-
-> Book a seat on a flight for a passenger. The system automatically checks seat availability and updates the count upon booking or cancellation.
+### 🔍 Search Tab
+![Search Tab](Screenshots/search_flights.png)
+> **Search Method 1 — By Booking ID:** Enter an exact booking ID to retrieve a specific record instantly.<br/>
+> **Search Method 2 — By Name or Flight Number:** Enter any keyword to find all matching bookings by passenger name or flight code.
 
 ---
 
 ## ⚙️ Features
 
-| Feature | Description |
+| Feature | Details |
 |---|---|
-| ✅ **Add Flight** | Insert new flight with number, origin, destination, date, time, seats, and price |
-| ✅ **Edit Flight** | Update any flight's information |
-| ✅ **Delete Flight** | Remove a flight from the system |
-| ✅ **View All Flights** | Display all flights in a list/table |
-| ✅ **Search by Flight Number** | Partial or full match on flight code |
-| ✅ **Search by Destination** | Find all flights to a specific city |
-| ✅ **Add Passenger** | Register passenger with name, national ID, phone, email |
-| ✅ **Edit / Delete Passenger** | Full passenger record management |
-| ✅ **Book Reservation** | Link a passenger to a flight with seat assignment |
-| ✅ **Cancel Reservation** | Mark a booking as cancelled and restore the seat |
-| ✅ **Seat Availability Tracking** | Auto-decrements/increments available seats on booking or cancellation |
-| ✅ **SQLite Integration** | All data persists in a local `.db` file — no server required |
+| ✅ **Passenger Management** | Add, update, delete passengers (Name, National ID, Phone) |
+| ✅ **Flight Management** | Add, update, delete flights (Number, From, To, Departure, Arrival, Price, Status) |
+| ✅ **Single Booking** | Book one passenger on a selected flight with optional seat number |
+| ✅ **Group Booking** | Add up to 9 passengers to a group and book them all on one flight at once |
+| ✅ **Cancel Booking** | Delete any booking record from the system |
+| ✅ **Search by Booking ID** | Exact lookup of a booking by its unique ID |
+| ✅ **Search by Name / Flight No.** | Partial keyword search across passenger names and flight numbers |
+| ✅ **Auto-fill on Selection** | Clicking a list item fills the form automatically for fast editing |
+| ✅ **Flight Status Tracking** | Flights can be marked as Scheduled, Delayed, Cancelled, Boarded, or Completed |
+| ✅ **Dark Theme UI** | Custom-painted dark background with color-coded buttons (Cyan = Add, Amber = Update, Red = Delete) |
+| ✅ **SQLite3 Embedded DB** | All data persists in `airline.db` — created automatically on first run |
+| ✅ **No External Dependencies** | `sqlite3.h` + `sqlite3.c` bundled directly in the project |
 
 ---
 
 ## 🗄️ Database Structure
 
-The application uses **3 tables** in SQLite:
+The application uses **3 tables** in SQLite3:
 
 ```
-Flights
-├── id             (INTEGER, Primary Key, Auto-increment)
-├── flightNumber   (TEXT, Unique)   e.g. "MS-401"
-├── origin         (TEXT)
-├── destination    (TEXT)
-├── departureDate  (TEXT)           "YYYY-MM-DD"
-├── departureTime  (TEXT)           "HH:MM"
-├── totalSeats     (INTEGER)
-├── availableSeats (INTEGER)
-└── ticketPrice    (REAL)
-
 Passengers
-├── id           (INTEGER, Primary Key, Auto-increment)
-├── name         (TEXT)
-├── nationalId   (TEXT, Unique)
-├── phone        (TEXT)
-└── email        (TEXT)
+├── id          INTEGER  PRIMARY KEY AUTOINCREMENT
+├── name        TEXT     NOT NULL
+├── nationalID  TEXT     UNIQUE NOT NULL
+└── phone       TEXT
 
-Reservations
-├── id            (INTEGER, Primary Key, Auto-increment)
-├── flightId      (INTEGER, Foreign Key → Flights)
-├── passengerId   (INTEGER, Foreign Key → Passengers)
-├── bookingDate   (TEXT)
-├── seatNumber    (TEXT)
-└── status        (TEXT)           "Confirmed" / "Cancelled"
+Flights
+├── id            INTEGER  PRIMARY KEY AUTOINCREMENT
+├── flightNumber  TEXT     NOT NULL UNIQUE
+├── fromCity      TEXT     NOT NULL
+├── toCity        TEXT     NOT NULL
+├── departure     DATETIME NOT NULL        e.g. "2026-06-15 14:30"
+├── arrival       DATETIME NOT NULL        e.g. "2026-06-15 17:00"
+├── price         REAL     NOT NULL
+└── status        TEXT     DEFAULT 'Scheduled'
+
+Bookings
+├── id           INTEGER  PRIMARY KEY AUTOINCREMENT
+├── passengerID  INTEGER  FOREIGN KEY → Passengers(id)
+├── flightID     INTEGER  FOREIGN KEY → Flights(id)
+├── seat         TEXT
+└── bookingDate  DATETIME DEFAULT CURRENT_TIMESTAMP
 ```
 
 ---
@@ -133,11 +125,12 @@ Reservations
 
 | Component | Technology |
 |---|---|
-| Programming Language | C++ |
-| GUI Framework | Win32 API (Windows Desktop Application) |
-| Database | SQLite 3 (embedded, single `.db` file) |
-| IDE | Microsoft Visual Studio |
-| Target Platform | Windows 10 / 11 |
+| Language | C++ (MSVC) |
+| GUI Framework | Win32 API — native Windows controls |
+| Database | SQLite3 (amalgamation — bundled in project) |
+| IDE | Microsoft Visual Studio 2019 / 2022 |
+| UI Controls | Tab Control, ListBox, ComboBox, Edit, Button (custom-drawn) |
+| Target OS | Windows 10 / 11 |
 
 ---
 
@@ -146,52 +139,70 @@ Reservations
 ### Prerequisites
 
 - Windows 10 or 11
-- Visual Studio 2019 or later (with Desktop development with C++ workload)
-- SQLite3 — already included in the project (`sqlite3.h` + `sqlite3.c`)
+- Visual Studio 2019 or 2022 with the **Desktop development with C++** workload installed
+- No extra libraries needed — SQLite3 is bundled inside the project
 
 ### Build & Run
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/XONepTon/airline_reservation_system.git
-   cd airline_reservation_system
-   ```
+**1. Clone the repository:**
+```bash
+git clone https://github.com/XONepTon/airline_reservation_system.git
+cd airline_reservation_system
+```
 
-2. **Open in Visual Studio:**
-   - Open `airline_reservation_system.sln`
+**2. Open the solution in Visual Studio:**
+```
+File → Open → Project/Solution → airline_reservation_system.sln
+```
 
-3. **Make sure SQLite files are in the project:**
-   - `sqlite3.h` and `sqlite3.c` must be in the project directory
-   - Both files must be added to the Visual Studio project
+**3. Verify SQLite files are in the project:**
+- `sqlite3.h` and `sqlite3.c` must be present in the root project folder
+- Both must appear in the Visual Studio Solution Explorer (add them if missing via *Add → Existing Item*)
 
-4. **Build the solution:**
-   - Press `Ctrl + Shift + B` or go to **Build → Build Solution**
+**4. Build the solution:**
+```
+Ctrl + Shift + B   or   Build → Build Solution
+```
 
-5. **Run the application:**
-   - Press `F5` or click **Local Windows Debugger**
-   - The database file `airline.db` will be created automatically on first run
+**5. Run the application:**
+```
+F5   or   Debug → Start Debugging
+```
+
+> ✅ On first launch, `airline.db` is created automatically in the same directory as the `.exe`.
 
 ---
 
 ## 📖 How to Use
 
-### Managing Flights
-- Click **"Flights"** from the main menu
-- Use **Add** to insert a new flight — fill in all required fields
-- Select a flight from the list and click **Edit** to modify it
-- Click **Delete** to remove a flight
-- Use the **Search by Flight Number** field or **Search by Destination** field to filter results
+### 👤 Passengers Tab
+| Action | How |
+|---|---|
+| Add passenger | Fill Name, National ID, Phone → click **+ Add** |
+| Edit passenger | Click a row in the list → fields auto-fill → modify → click **Update** |
+| Delete passenger | Click a row → click **Delete** → confirm |
 
-### Managing Passengers
-- Click **"Passengers"** from the main menu
-- Add passengers with their National ID (must be unique)
-- Search by name or by National ID
+### ✈️ Flights Tab
+| Action | How |
+|---|---|
+| Add flight | Fill all fields, pick a Status → click **+ Add** |
+| Edit flight | Click a row → fields auto-fill → modify → click **Update** |
+| Delete flight | Click a row → click **Delete** → confirm |
+| Departure/Arrival format | Use `YYYY-MM-DD HH:MM` — e.g. `2026-06-15 14:30` |
 
-### Making a Reservation
-- Click **"Reservations"** from the main menu
-- Select a **Flight** and a **Passenger** from the dropdowns
-- Enter a **Seat Number** and click **Book**
-- To cancel, select a reservation and click **Cancel Booking**
+### 🎫 Bookings Tab
+| Action | How |
+|---|---|
+| Single booking | Select Passenger + Flight → optionally enter Seat → click **Confirm Group Booking** |
+| Group booking | Select each passenger → click **+ Add to Group** (repeat up to 9) → select Flight → click **Confirm Group Booking** |
+| Cancel booking | Click a booking in the list → click **Cancel Booking** → confirm |
+| Clear group | Click **Clear Group** to reset the selection |
+
+### 🔍 Search Tab
+| Search Type | How |
+|---|---|
+| By Booking ID | Enter the numeric ID → click **Search** (left button) |
+| By Name or Flight No. | Enter any keyword → click **Search** (right button) — supports partial match |
 
 ---
 
@@ -200,31 +211,30 @@ Reservations
 ```
 airline_reservation_system/
 │
-├── airline_db.h          # Database header — structs & function declarations
-├── airline_db.cpp        # Database implementation — all SQLite CRUD logic
-├── main.cpp              # WinMain entry point & main window procedure
-├── resource.h            # Windows resource IDs
-├── airline.rc            # Resource file (dialogs, menus, icons)
-├── sqlite3.h             # SQLite amalgamation header
-├── sqlite3.c             # SQLite amalgamation source
+├── main.cpp                  # Full application — WinMain, WndProc, all UI & DB logic
+├── sqlite3.h                 # SQLite3 amalgamation header
+├── sqlite3.c                 # SQLite3 amalgamation source
+├── airline_reservation_system.sln
+├── airline_reservation_system.vcxproj
 │
-├── screenshots/          # 📂 Put your app screenshots here
-│   ├── main_window.png
-│   ├── flights.png
-│   ├── search_flights.png
+├── Screenshots/              # 📂 Place your screenshots here
 │   ├── passengers.png
-│   └── reservations.png
+│   ├── flights.png
+│   ├── bookings.png
+│   └── search.png
 │
 └── README.md
 ```
+
+> 📝 `airline.db` is generated automatically at runtime in the same folder as the executable.
 
 ---
 
 ## 👨‍💻 Author
 
-**ramadan ragab **  
-Faculty of Industrial Technology and Energy — Delta Technological University  
-Windows Programming Course — [Year]
+**Ramadan Ragab**
+Faculty of Industrial Technology and Energy — Delta Technological University
+Windows Programming Course — 2026
 
 [![GitHub](https://img.shields.io/badge/GitHub-XONepTon-181717?style=flat&logo=github)](https://github.com/XONepTon)
 
@@ -232,5 +242,5 @@ Windows Programming Course — [Year]
 
 ## 📄 License
 
-This project is for educational purposes.  
-Feel free to use or reference it for your own learning.
+This project is developed for educational purposes as part of a university course.
+Feel free to reference or build upon it for your own learning.
